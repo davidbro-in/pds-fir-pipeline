@@ -19,7 +19,7 @@ module filtro_fir
 
   // Internal Signals
    reg  signed [WW_INPUT           -1:0] register [14:1];
-   wire signed [         WW_COEFF  -1:0] coeff    [14:0];
+   reg signed [         WW_COEFF  -1:0] coeff    [14:0];
    wire signed [WW_INPUT+WW_COEFF  -1:0] prod     [14:0];
    wire signed [WW_INPUT+WW_COEFF+1-1:0] sum      [8:1]; 
    wire signed [WW_INPUT+WW_COEFF+2-1:0] sum1     [4:1]; 
