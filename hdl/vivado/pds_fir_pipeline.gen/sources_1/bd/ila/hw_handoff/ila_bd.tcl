@@ -160,7 +160,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
   set probe0_0 [ create_bd_port -dir I -from 7 -to 0 probe0_0 ]
-  set probe1_0 [ create_bd_port -dir I -from 0 -to 0 probe1_0 ]
+  set probe1_0 [ create_bd_port -dir I -from 7 -to 0 probe1_0 ]
 
   # Create instance: ila_0, and set properties
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 16 10:23:20 2021" VIVADOVERSION="2021.1.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 16 10:27:12 2021" VIVADOVERSION="2021.1.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:eclypse-z7:part0:1.0" DEVICE="7z020" NAME="ila" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -14,7 +14,7 @@
         <CONNECTION INSTANCE="ila_0" PORT="probe0"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" LEFT="0" NAME="probe1_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe1_0">
+    <PORT DIR="I" LEFT="7" NAME="probe1_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe1_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="ila_0" PORT="probe1"/>
       </CONNECTIONS>

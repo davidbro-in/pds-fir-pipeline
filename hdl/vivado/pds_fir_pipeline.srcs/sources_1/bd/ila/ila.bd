@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xFA21FD4D167041D2",
+      "boundary_crc": "0x67F6C5F48BA7796B",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../pds_fir_pipeline.gen/sources_1/bd/ila",
       "name": "ila",
@@ -47,7 +47,7 @@
       },
       "probe1_0": {
         "direction": "I",
-        "left": "0",
+        "left": "7",
         "right": "0"
       }
     },

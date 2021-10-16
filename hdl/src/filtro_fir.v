@@ -15,6 +15,7 @@ module filtro_fir
 
   // Local Params
   localparam WW_COEFF = 8;
+  parameter MEM_COEFF_FILE = "coeff.hex";
 
   // Internal Signals
    reg  signed [WW_INPUT           -1:0] register [14:1];
@@ -28,23 +29,28 @@ module filtro_fir
    reg signed [WW_INPUT+WW_COEFF+4 -1:0] sum3_d;
    reg signed [WW_INPUT+WW_COEFF+1 -1:0] sum_d    [8:1];
 
+  initial begin
+    if (MEM_COEFF_FILE != "") begin
+      $readmemh(MEM_COEFF_FILE, coeff);
+    end
+  end
 
   // Coeffs c = [-1 1/2 -1/4 1/8]
-    assign coeff[ 0] = 8'hFF;
-    assign coeff[ 1] = 8'hFF;
-    assign coeff[ 2] = 8'hFF;
-    assign coeff[ 3] = 8'h00;
-    assign coeff[ 4] = 8'h03;
-    assign coeff[ 5] = 8'h08;
-    assign coeff[ 6] = 8'h0D;
-    assign coeff[ 7] = 8'h10;
-    assign coeff[ 8] = 8'h0D;
-    assign coeff[ 9] = 8'h08;
-    assign coeff[10] = 8'h03;
-    assign coeff[11] = 8'h00;
-    assign coeff[12] = 8'hFF;
-    assign coeff[13] = 8'hFF;
-    assign coeff[14] = 8'hFF;
+  // assign coeff[ 0] = 8'hFF;
+  // assign coeff[ 1] = 8'hFF;
+  // assign coeff[ 2] = 8'hFF;
+  // assign coeff[ 3] = 8'h00;
+  // assign coeff[ 4] = 8'h03;
+  // assign coeff[ 5] = 8'h08;
+  // assign coeff[ 6] = 8'h0D;
+  // assign coeff[ 7] = 8'h10;
+  // assign coeff[ 8] = 8'h0D;
+  // assign coeff[ 9] = 8'h08;
+  // assign coeff[10] = 8'h03;
+  // assign coeff[11] = 8'h00;
+  // assign coeff[12] = 8'hFF;
+  // assign coeff[13] = 8'hFF;
+  // assign coeff[14] = 8'hFF;
    
   // Shift Register
   always @(posedge clk) begin
