@@ -1,0 +1,23 @@
+
+*** Running vivado
+    with args -log ila_ila_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_ila_0_0.tcl
+
+
+
+****** Vivado v2021.1.1 (64-bit)
+  **** SW Build 3286242 on Wed Jul 28 13:10:47 MDT 2021
+  **** IP Build 3279568 on Wed Jul 28 16:48:48 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source ila_ila_0_0.tcl -notrace
+Command: synth_design -top ila_ila_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9728
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1225.188 ; gain = 0.000
+---------------------------------------------------------------------------------
