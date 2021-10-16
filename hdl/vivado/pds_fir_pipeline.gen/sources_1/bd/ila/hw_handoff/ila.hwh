@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 16 10:10:16 2021" VIVADOVERSION="2021.1.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 16 10:23:20 2021" VIVADOVERSION="2021.1.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:eclypse-z7:part0:1.0" DEVICE="7z020" NAME="ila" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -69,7 +69,7 @@
         <PARAMETER NAME="C_SLOT_0_AXI_WUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_SLOT_0_AXI_BUSER_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE0_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_PROBE1_WIDTH" VALUE="8"/>
         <PARAMETER NAME="C_PROBE2_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE3_WIDTH" VALUE="1"/>
         <PARAMETER NAME="C_PROBE4_WIDTH" VALUE="1"/>
@@ -3174,7 +3174,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="probe0_0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe1_0">
+        <PORT DIR="I" LEFT="7" NAME="probe1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_probe1_0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="probe1_0"/>
           </CONNECTIONS>

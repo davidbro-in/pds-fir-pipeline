@@ -170,6 +170,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_MONITOR_TYPE {Native} \
    CONFIG.C_NUM_OF_PROBES {2} \
    CONFIG.C_PROBE0_WIDTH {8} \
+   CONFIG.C_PROBE1_WIDTH {8} \
  ] $ila_0
 
   # Create port connections

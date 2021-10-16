@@ -72,6 +72,9 @@
           },
           "C_PROBE0_WIDTH": {
             "value": "8"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "8"
           }
         }
       }
