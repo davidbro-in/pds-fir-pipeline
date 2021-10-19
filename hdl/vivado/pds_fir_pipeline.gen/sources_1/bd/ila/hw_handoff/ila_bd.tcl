@@ -161,6 +161,7 @@ proc create_root_design { parentCell } {
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
   set probe0_0 [ create_bd_port -dir I -from 7 -to 0 probe0_0 ]
   set probe1_0 [ create_bd_port -dir I -from 7 -to 0 probe1_0 ]
+  set probe2_0 [ create_bd_port -dir I -from 7 -to 0 probe2_0 ]
 
   # Create instance: ila_0, and set properties
   set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
@@ -168,15 +169,17 @@ proc create_root_design { parentCell } {
    CONFIG.C_DATA_DEPTH {4096} \
    CONFIG.C_ENABLE_ILA_AXI_MON {false} \
    CONFIG.C_MONITOR_TYPE {Native} \
-   CONFIG.C_NUM_OF_PROBES {2} \
+   CONFIG.C_NUM_OF_PROBES {3} \
    CONFIG.C_PROBE0_WIDTH {8} \
    CONFIG.C_PROBE1_WIDTH {8} \
+   CONFIG.C_PROBE2_WIDTH {8} \
  ] $ila_0
 
   # Create port connections
   connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins ila_0/clk]
   connect_bd_net -net probe0_0_1 [get_bd_ports probe0_0] [get_bd_pins ila_0/probe0]
   connect_bd_net -net probe1_0_1 [get_bd_ports probe1_0] [get_bd_pins ila_0/probe1]
+  connect_bd_net -net probe2_0_1 [get_bd_ports probe2_0] [get_bd_pins ila_0/probe2]
 
   # Create address segments
 

@@ -1,7 +1,8 @@
 module filtro_fir
   #(
     parameter WW_INPUT  = 8,
-    parameter WW_OUTPUT = 8
+    parameter WW_OUTPUT = 8,
+    parameter MEM_COEFF_FILE = "coeff.hex"
     ) 
    (
     input 			  clk,
@@ -15,7 +16,7 @@ module filtro_fir
 
   // Local Params
   localparam WW_COEFF = 8;
-  parameter MEM_COEFF_FILE = "coeff.hex";
+  // parameter MEM_COEFF_FILE = "coeff.hex";
 
   // Internal Signals
    reg  signed [WW_INPUT           -1:0] register [14:1];

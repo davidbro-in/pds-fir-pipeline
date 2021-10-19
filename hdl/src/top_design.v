@@ -4,6 +4,8 @@ module top_design(
 
   // Parameters
   parameter N_PROBE   = 8;
+  parameter LOWPASS_COEFF_FILE    = "low_pass.hex"  ; 
+  parameter HIGHPASS_COEFF_FILE    = "high_pass.hex"  ; 
 
   // Ports
   input                   clock;
@@ -12,7 +14,8 @@ module top_design(
   wire                    reset;
 
   wire [8  - 1 : 0] w_signal;
-  wire [8  - 1 : 0] w_filtered_signal;
+  wire [8  - 1 : 0] w_low_filtered_signal;
+  wire [8  - 1 : 0] w_high_filtered_signal;
 
   wire [N_PROBE - 1 : 0] w_probe0;
   wire [N_PROBE - 1 : 0] w_probe1;
@@ -26,13 +29,28 @@ module top_design(
     );
 
   filtro_fir
-    u_filtro_fir
+    #(
+      .MEM_COEFF_FILE   (LOWPASS_COEFF_FILE)
+    )
+    u_lowpass_filtro_fir
     (
       .clk        (clock),
       .i_srst     (~reset),
       .i_en       (1'b1),
       .i_data     (w_signal),
-      .o_data     (w_filtered_signal)
+      .o_data     (w_low_filtered_signal)
+    );
+  filtro_fir
+    #(
+      .MEM_COEFF_FILE   (HIGHPASS_COEFF_FILE)
+    )
+    u_highpass_filtro_fir
+    (
+      .clk        (clock),
+      .i_srst     (~reset),
+      .i_en       (1'b1),
+      .i_data     (w_signal),
+      .o_data     (w_high_filtered_signal)
     );
 
   //////////////////////////////////////////
@@ -44,8 +62,9 @@ module top_design(
        u_ilaDDA
          (
      	.clk_0   (clock),
-     	.probe0_0(w_signal),         // Bits: 8
-     	.probe1_0(w_filtered_signal) // Bits: 8
+     	.probe0_0(w_signal),              // Bits: 8
+     	.probe1_0(w_low_filtered_signal),  // Bits: 8
+     	.probe2_0(w_high_filtered_signal) // Bits: 8
      	);
 
      vio

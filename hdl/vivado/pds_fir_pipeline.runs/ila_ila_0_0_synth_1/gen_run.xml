@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ila_ila_0_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1634397905">
+<GenRun Id="ila_ila_0_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1634621784">
   <File Type="PA-TCL" Name="ila_ila_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="ila_ila_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="ila_ila_0_0_reports.tcl"/>
@@ -12,6 +12,7 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_ila_0_0">
     <File Path="$PSRCDIR/sources_1/bd/ila/ip/ila_ila_0_0/ila_ila_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -25,6 +26,7 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_ila_0_0">
     <File Path="$PSRCDIR/sources_1/bd/ila/ip/ila_ila_0_0/ila_ila_0_0.xci">
       <FileInfo>
+        <Attr Name="Library" Val="xil_defaultlib"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
